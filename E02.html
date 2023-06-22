@@ -9,11 +9,25 @@
     //Calcule o custo total dos alimentos e verifique se há dinheiro suficiente para realizar a compra, indicando se sobrará ou faltará dinheiro, e também apresentando qual foi a quantia que sobrou ou faltou para realizar a compra. Apresente também na tela o valor total da compra.
 
     //ENTRADA
-
-
+    const MA = Number(prompt("qual o valor da unidade do Mamão?").replace(",", ".").trim());
+    const ME = Number(prompt("qual o valor do Kg da Melancia?").replace(",", ".").trim());
+    const AB = Number(prompt("qual o valor da unidade do Abacate?").replace(",", ".").trim());
+    const CE = Number(prompt("qual o valor do Kg do Cebola?").replace(",", ".").trim());
+    const DT = Number(prompt("quantos reais voce possui?").replace(",", ".").trim());
     //PROCESSAMENTO
-
-
-    //SAÍDA
-
+if (!isNaN(MA) && !isNaN(ME) && !isNaN(AB) && !isNaN(CE) && !isNaN(DT)) {
+    let vt = 0
+    vt = ((MA * 5) + (ME * 3) + (AB * 4) + (CE * 1.1)).toFixed(1)
+    if (DT >= vt) {
+        vt = DT - vt;
+        alert(`Voce possui o valor necessario e sobrou ${vt} reais`)
+    }
+    else if (vt > DT) {
+        vt = vt - DT;
+        alert(`Voce não possui o valor necessario e faltára ${vt} reais`)
+    }
+}
+else {
+    alert(`Valores invalidos`)
+}
 </script>
